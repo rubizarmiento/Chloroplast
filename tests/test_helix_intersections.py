@@ -216,17 +216,17 @@ def test_helix_intersections():
     # Test Case 1: Two perpendicular helices
     print("\nTest Case 1: Perpendicular helices")
     helix1 = {
-        'center': (0, 0, 0),
-        'radius': 2.0,
-        'pitch': 1.0,
+        'center': (185, 0, 0),
+        'radius': 45.0,
+        'pitch': 62.64,
         'axis': 'z'
     }
     
     helix2 = {
         'center': (0, 0, 0),
-        'radius': 2.0,
-        'pitch': 1.0,
-        'axis': 'x'
+        'radius': 155,
+        'pitch': 250.57,
+        'axis': 'z'
     }
     
     intersections1 = find_helix_intersections(helix1, helix2, 
@@ -237,43 +237,43 @@ def test_helix_intersections():
     for i, inter in enumerate(intersections1[:5]):  # Show first 5
         print(f"  Intersection {i+1}: {inter['point']} (distance: {inter['distance']:.2e})")
     
-    # Test Case 2: Offset parallel helices
-    print("\nTest Case 2: Offset parallel helices")
-    helix3 = {
-        'center': (0, 0, 0),
-        'radius': 1.5,
-        'pitch': 2.0,
-        'axis': 'z'
-    }
-    
-    helix4 = {
-        'center': (2, 0, 0.5),
-        'radius': 1.5,
-        'pitch': 2.0,
-        'axis': 'z'
-    }
-    
-    intersections2 = find_helix_intersections(helix3, helix4,
-                                            t_range=(-4*np.pi, 4*np.pi),
-                                            num_initial_guesses=80)
-    
-    print(f"Found {len(intersections2)} intersections")
-    for i, inter in enumerate(intersections2[:3]):  # Show first 3
-        print(f"  Intersection {i+1}: {inter['point']} (distance: {inter['distance']:.2e})")
-    
-    # Visualize results
-    if len(intersections1) > 0:
-        fig1 = visualize_helix_intersections(helix1, helix2, intersections1)
-        plt.savefig('/martini/rubiz/Chloroplast/tests/perpendicular_helices.png', dpi=150)
-        plt.show()
-    
-    if len(intersections2) > 0:
-        fig2 = visualize_helix_intersections(helix3, helix4, intersections2)
-        plt.savefig('/martini/rubiz/Chloroplast/tests/offset_helices.png', dpi=150)
-        plt.show()
-    
-    print("\nTest completed!")
-    return intersections1, intersections2
+    ## Test Case 2: Offset parallel helices
+    #print("\nTest Case 2: Offset parallel helices")
+    #helix3 = {
+    #    'center': (0, 0, 0),
+    #    'radius': 1.5,
+    #    'pitch': 2.0,
+    #    'axis': 'z'
+    #}
+    #
+    #helix4 = {
+    #    'center': (2, 0, 0.5),
+    #    'radius': 1.5,
+    #    'pitch': 2.0,
+    #    'axis': 'z'
+    #}
+    #
+    #intersections2 = find_helix_intersections(helix3, helix4,
+    #                                        t_range=(-4*np.pi, 4*np.pi),
+    #                                        num_initial_guesses=80)
+    #
+    #print(f"Found {len(intersections2)} intersections")
+    #for i, inter in enumerate(intersections2[:3]):  # Show first 3
+    #    print(f"  Intersection {i+1}: {inter['point']} (distance: {inter['distance']:.2e})")
+    #
+    ## Visualize results
+    #if len(intersections1) > 0:
+    #    fig1 = visualize_helix_intersections(helix1, helix2, intersections1)
+    #    plt.savefig('/martini/rubiz/Chloroplast/tests/perpendicular_helices.png', dpi=150)
+    #    plt.show()
+    #
+    #if len(intersections2) > 0:
+    #    fig2 = visualize_helix_intersections(helix3, helix4, intersections2)
+    #    plt.savefig('/martini/rubiz/Chloroplast/tests/offset_helices.png', dpi=150)
+    #    plt.show()
+    #
+    #print("\nTest completed!")
+    #return intersections1, intersections2
 
 if __name__ == "__main__":
     # Run the test

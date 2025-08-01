@@ -82,19 +82,18 @@ def demo():
     
     # Define two intersecting helices
     helix1 = {
-        'center': (0, 0, 0),     # Center at origin
-        'radius': 1.0,           # Radius of 1 unit
-        'pitch': 0.8,            # Small pitch for more intersections
-        'axis': 'z'              # Rotating around z-axis
+        'center': (185, 0, 62.64/2),
+        'radius': 45.0,
+        'pitch': 62.64,
+        'axis': 'z'
     }
     
     helix2 = {
-        'center': (0, 0, 0),     # Same center
-        'radius': 1.0,           # Same radius
-        'pitch': 0.8,            # Same pitch
-        'axis': 'x'              # Rotating around x-axis (perpendicular)
+        'center': (0, 0, 0),
+        'radius': 155,
+        'pitch': 250.57,
+        'axis': 'z'
     }
-    
     print(f"Helix 1: center={helix1['center']}, radius={helix1['radius']}, axis={helix1['axis']}")
     print(f"Helix 2: center={helix2['center']}, radius={helix2['radius']}, axis={helix2['axis']}")
     print(f"Pitch: {helix1['pitch']} (both helices)")
