@@ -1,5 +1,3 @@
-Improved triangulation for the connectors of the helices.
-Added connectors periodically.
 Merged connectors with plane and repeated periodically.
 Merged whole model.
 Cleaned code. Organized user defined variables.
