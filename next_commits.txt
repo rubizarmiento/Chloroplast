@@ -1,0 +1,11 @@
+Improved triangulation for the connectors of the helices.
+Added connectors periodically.
+Merged connectors with plane and repeated periodically.
+Merged whole model.
+Cleaned code. Organized user defined variables.
+Cleaned code. Removed unused functions.
+Updated requirements.txt
+Cleaned code. Set-up homogeneous resolution across the model.
+Test open model.
+Test close model.
+
