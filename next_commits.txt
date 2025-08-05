@@ -1,3 +1,5 @@
+Before correcting radius of the helices to match slit_width.
+Correcting radius of the helices to match slit_width.
 Merged connectors with plane and repeated periodically.
 Merged whole model.
 Cleaned code. Organized user defined variables.
