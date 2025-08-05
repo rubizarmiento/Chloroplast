@@ -1,6 +1,6 @@
 # Ignore large OBJ files
 Reference_objs/
-
+models/
 # Ignore common Python files
 __pycache__/
 *.py[cod]
