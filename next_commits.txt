@@ -1,4 +1,4 @@
-Test Merged model helices passed
+Before adding solid connectors.
 Merged connectors with plane and repeated periodically.
 Merged whole model.
 Cleaned code. Organized user defined variables.
