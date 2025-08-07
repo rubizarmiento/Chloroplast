@@ -1,4 +1,3 @@
-Merging of complex shapes will be changed to Blender as pyvista fails.
 Merged whole model.
 Cleaned code. Organized user defined variables.
 Cleaned code. Removed unused functions.
