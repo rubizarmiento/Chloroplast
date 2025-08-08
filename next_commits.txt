@@ -1,4 +1,4 @@
-Generate individually final models
+Cleaned code. Generated mode at 1nm2 resolution.
 Merged whole model.
 Cleaned code. Organized user defined variables.
 Cleaned code. Removed unused functions.
