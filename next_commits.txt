@@ -1,5 +1,4 @@
-Cleaned code. Generated mode at 1nm2 resolution.
-Merged whole model.
+Finalized model. Merging is done externally by Blender
 Cleaned code. Organized user defined variables.
 Cleaned code. Removed unused functions.
 Updated requirements.txt
