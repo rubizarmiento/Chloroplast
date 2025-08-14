@@ -1,5 +1,4 @@
-Center will be removed using boolean operations in Blender.
-Intersections will be added as solids.
+Increased width connectors
 Finalized model. Merging is done externally by Blender
 Cleaned code. Organized user defined variables.
 Cleaned code. Removed unused functions.
