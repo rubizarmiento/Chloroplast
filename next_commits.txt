@@ -1,5 +1,4 @@
-Changed loop contruction to reduce the number of basic elements to 3
-Finalized model. Merging is done externally by Blender
+Finalized model. Merging is done externally using Blender.
 Cleaned code. Organized user defined variables.
 Cleaned code. Removed unused functions.
 Updated requirements.txt
