@@ -1,4 +1,4 @@
-Increased width connectors
+Changed loop contruction to reduce the number of basic elements to 3
 Finalized model. Merging is done externally by Blender
 Cleaned code. Organized user defined variables.
 Cleaned code. Removed unused functions.
