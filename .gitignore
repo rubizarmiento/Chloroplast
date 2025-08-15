@@ -11,3 +11,4 @@
 # 3) If you need to include certain patterns inside src/:
 !remeshing.ipynb     
 !cryo-data.ipynb
+!visualize_model.ipynb
