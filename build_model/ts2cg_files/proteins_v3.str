@@ -1,0 +1,26 @@
+include ../gro_proteins_m3/lhcii_trimer.gro
+include ../gro_proteins_m3/psii.gro
+include ../gro_proteins_m3/cytb6f.gro
+include ../gro_proteins_m3/psi.gro
+include ../gro_proteins_m3/atpsynthase.gro
+
+; lipidnname ratio_up ratio_down  APL
+[Protein List]
+protein1     1     0.01     0     0     -3.7
+protein2     2     0.01     0     0     -3.7
+protein3     3     0.01     0     0     -3.7
+protein4     4     0.01     0     0     -3.7
+protein5     5     0.01     0     0     -3.7
+End Protein
+
+[Lipids List]
+Domain 0
+YPPG 0.05 0.05 0.654
+YFPG 0.10 0.10 0.670
+FPGG 0.05 0.05 0.671
+DFGG 0.25 0.25 0.678
+FPMG 0.05 0.05 0.644
+DFMG 0.35 0.35 0.644
+FPSQ 0.15 0.15 0.658
+End
+
