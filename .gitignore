@@ -6,7 +6,8 @@
 !scripts/             # keep the entire src/ directory
 !tests/               # keep the entire src/ directory
 !blender_scripts/     # keep the entire src/ directory
-
+!build_model/         # keep the entire src/ directory
+!protocol/            # keep the entire src/ directory
 
 # 3) If you need to include certain patterns inside src/:
 !remeshing.ipynb     
