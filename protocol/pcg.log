@@ -1,0 +1,1 @@
+/martini/rubiz/stacks/TS2CG1.1-master/TS2CG1.1.1.0_r/PCG  -str  /martini/rubiz/Github/Chloroplast/build_model/ts2cg_files/input.str  -Bondlength  0.1  -LLIB  /martini/rubiz/Github/Chloroplast/build_model/ts2cg_files/Martini3.LIB  -defout  system  -dts  point  
