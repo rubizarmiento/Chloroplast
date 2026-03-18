@@ -20,21 +20,28 @@ tsi_to_pdb(){
 }
 
 generate_plm(){
-    scale=${1}
-    Mashno=${2}
-    new_dir=${3}
-    material=${4}
-    cd ${wdir}
+    local odir="" scale="" Mashno="" new_dir="false" material="false"
+    while [[ $# -gt 0 ]]; do
+        case $1 in
+            -odir)     odir="$2";     shift 2;;
+            -scale)    scale="$2";    shift 2;;
+            -meshno)   Mashno="$2";   shift 2;;
+            -new_dir)  new_dir="$2";  shift 2;;
+            -material) material="$2"; shift 2;;
+            *) echo "Unknown argument: $1"; return 1;;
+        esac
+    done
+    cd ${odir}
     echo "Generating PLM files for ${not_empty_surfaces[@]}"
     length=${#not_empty_surfaces[@]}
     for i in $(seq 1 ${length}); do
         case=${not_empty_surfaces[$i-1]}
         if ${new_dir}; then
-            rm -r ${wdir}/${case}
-            mkdir -p ${wdir}/${case}   
+            rm -r ${odir}/${case}
+            mkdir -p ${odir}/${case}   
         fi
  
-        cd ${wdir}/${case}
+        cd ${odir}/${case}
         echo "---Step1: Generating TSI file for ${case}---"
         if ${material};then
             python3 ${scripts}/obj_to_tsi.py -i ${objs}/${case}.obj -o ${case}.tsi -scale ${scale} -box "2000" "2000" "2000" -material 
@@ -42,9 +49,9 @@ generate_plm(){
             python3 ${scripts}/obj_to_tsi.py -i ${objs}/${case}.obj -o ${case}.tsi -scale ${scale} -box "2000" "2000" "2000" 
         fi
         
-        rm -r pointvisualization_data
-        rm -r point
-        rm extended.tsi
+        rm -rf ${odir}/pointvisualization_data
+        rm -rf ${odir}/point
+        rm -f ${odir}/extended.tsi
         echo "---Step2: Generating PLM files for ${case}---"
         echo "${TS2CG}/PLM -TSfile ${case}.tsi -bilayerThickness 3 -Mashno ${Mashno} -smooth -AlgType Type1" >> plm.sh
         ${TS2CG}/PLM -TSfile ${case}.tsi -bilayerThickness 3 -Mashno ${Mashno} -smooth -AlgType Type1 > error.log
@@ -54,7 +61,7 @@ generate_plm(){
         cat bad_triangles.txt
 
     done
-    echo "Output directory: ${wdir}"
+    echo "Output directory: ${odir}"
 }
 
 generate_plm_inclusions(){
@@ -99,27 +106,43 @@ generate_plm_inclusions(){
 
 
 write_pcg(){
-    str=${1}
+    local odir="" str=""
+    while [[ $# -gt 0 ]]; do
+        case $1 in
+            -odir) odir="$2"; shift 2;;
+            -str)  str="$2";  shift 2;;
+            *) echo "Unknown argument: $1"; return 1;;
+        esac
+    done
     output="run_pcg.sh"
     length=${#not_empty_surfaces[@]}
     for i in $(seq 1 ${length}); do
         case=${not_empty_surfaces[$i-1]}
-        cd ${wdir}/${case}
-        output=${wdir}/${case}/run_pcg.sh
+        cd ${odir}
+        output=${odir}/run_pcg.sh
         #echo "${TS2CG}/PLM -TSfile extended.tsi -bilayerThickness 3 -rescalefactor 1 1 1 -Mashno 1 -o 2" > ${output}
         #echo "${TS2CG}/PLM -TSfile extended.tsi -bilayerThickness 3 -rescalefactor 1 1 1 -Mashno 1 -o 3" >> ${output}
         echo "${TS2CG}/PCG -str ${str} -Bondlength 0.1 -LLIB ${wdir}/build_model/ts2cg_files/Martini3.LIB -defout system -dts point" > ${output}
-        echo "${wdir}/${case}/run_pcg.sh was written"
+        echo "${odir}/run_pcg.sh was written"
     done
 }
 
 run_pcg(){
+    local odir="" str=""
+    while [[ $# -gt 0 ]]; do
+        case $1 in
+            -odir) odir="$2"; shift 2;;
+            -str)  str="$2";  shift 2;;
+            *) echo "Unknown argument: $1"; return 1;;
+        esac
+    done
+
     length=${#not_empty_surfaces[@]}
     for i in $(seq 1 ${length}); do
         case=${not_empty_surfaces[$i-1]}
-        cd ${wdir}/${case}
-        rm system.gro system.top
-        bash ${wdir}/${case}/run_pcg.sh
+        cd ${odir}
+        rm -f system.gro system.top
+        bash ${odir}/run_pcg.sh
     done
 }
 

@@ -2,7 +2,7 @@
 *
 
 # 2) But not these specific ones:
-!protocol/            # keep the entire protocol/ directory
+!protocol            # keep the entire protocol/ directory
 !protocol/**
 !.gitignore           # keep the ignore file itself
 !scripts/             # keep the entire src/ directory
