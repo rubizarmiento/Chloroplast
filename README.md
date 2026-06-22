@@ -34,7 +34,7 @@ pip install -r requirements.txt
 
 ## Project Structure
 
-- `remeshing.ipynb` - Main Jupyter notebook for mesh processing
+- `thylakoid_mesh.ipynb` - Main Jupyter notebook for mesh processing
 - `blender_scripts/` - Scripts for Blender integration
 - `Reference_objs/` - Reference 3D objects and models
 - `tests/` - Unit tests for the project
@@ -44,8 +44,8 @@ pip install -r requirements.txt
 
 1. Follow the setup instructions above
 2. Launch Jupyter Lab or Jupyter Notebook
-3. Open `remeshing.ipynb` to begin working with the project
+3. Open `thylakoid_mesh.ipynb` to begin working with the project
 
 
-
+c
 

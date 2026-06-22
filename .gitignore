@@ -11,6 +11,6 @@
 !build_model/         # keep the entire src/ directory
 
 # 3) If you need to include certain patterns inside src/:
-!remeshing.ipynb     
-!cryo-data.ipynb
-!visualize_model.ipynb
+!thylakoid_mesh.ipynb     
+#!cryo-data.ipynb
+#!visualize_model.ipynb
