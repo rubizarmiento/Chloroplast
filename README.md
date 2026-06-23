@@ -24,7 +24,7 @@ pip install jupyter
 
 ### 4. Create a Jupyter Kernel
 ```bash
-python -m ipykernel install --user --name=env --display-name "default"
+python -m ipykernel install --user --name=env --display-name "thylakoid_mesh"
 ```
 
 ### 5. Install Required Packages
