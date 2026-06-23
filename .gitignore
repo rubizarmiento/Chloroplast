@@ -10,6 +10,7 @@
 !blender_scripts/     # keep the entire src/ directory
 !build_model/         # keep the entire src/ directory
 !martini_mesh/
+!martini_mesh/**
 # 3) If you need to include certain patterns inside src/:
 !thylakoid_mesh.ipynb     
 #!cryo-data.ipynb
