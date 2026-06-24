@@ -1,0 +1,12 @@
+# ---FLEXIBLE PARAMETERS--- 
+# Can be changed, though they are values that best match the experimental data.
+radius_granum: 125          # Radius of the granum cylinder (nm)
+height_crosssection: 18     # Height of the granum cylinder (nm); also sets the cross-section height of all helix tubes
+membrane_thickness: 4       # Thylakoid membrane thickness, extra space needed for TS2CG
+stromal_gap: 3              # Gap between stacked grana (nm)
+n_granum: 10                # Number of disks in the granum stack
+inner_pore: 25              # Inner radius of the left helix (nm)
+
+# ---FIXED PARAMETERS--- 
+# Should not be changed as the final assembly will break.
+tilt_angle: 18.45     # Helix tilt angle for right- and left-handed helices (degrees)

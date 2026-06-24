@@ -11,8 +11,10 @@
 !build_model/         # keep the entire src/ directory
 !martini_mesh/
 !martini_mesh/**
+!martini_mesh/model_parameters.yaml
 !Reference_objs/
 !Reference_objs/original_merged.obj
 !Reference_objs/original_merged.mtl
+
 # 3) If you need to include certain patterns inside src/:
 !thylakoid_mesh.ipynb     
