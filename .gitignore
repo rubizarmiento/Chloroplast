@@ -12,7 +12,5 @@
 !martini_mesh/
 !martini_mesh/**
 !Reference_objs/
-!Reference_objs/original_merged.obj
-!Reference_objs/original_merged.mtl
 # 3) If you need to include certain patterns inside src/:
 !thylakoid_mesh.ipynb     
