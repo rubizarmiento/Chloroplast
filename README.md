@@ -1,36 +1,79 @@
 # Chloroplast
 
-A Python project for the visualization of a chloroplast using PyVista.
+## Running the `thylakoid_mesh.ipynb` Notebook locally
+This step is preffered as it allows to visualize 3D models interactively in Jupyter.
 
-## Setting up the Python Environment and Jupyter Kernel
 
 Follow these steps to set up your development environment:
 
-### 1. Create a Python Environment
+### 1. Duplicate repository
 ```bash
-python3.10 -m venv "env"
+git clone https://github.com/rubizarmiento/Chloroplast.git
+cd Chloroplast
 ```
 
-### 2. Activate the Python Environment
+### 2. Create a Python Environment
 ```bash
-source env/bin/activate
+python3.10 -m venv "thylakoid_mesh"
 ```
 
-### 3. Install Jupyter
+### 3. Activate the Python Environment
+```bash
+source thylakoid_mesh/bin/activate
+```
+
+### 4. Install Jupyter
 ```bash
 pip install --upgrade pip
 pip install jupyter
 ```
 
-### 4. Create a Jupyter Kernel
+### 5. Create a Jupyter Kernel
 ```bash
 python -m ipykernel install --user --name=env --display-name "thylakoid_mesh"
 ```
 
-### 5. Install Required Packages
+### 6. Install Required Packages
 ```bash
 pip install -r requirements.txt
+``` 
+
+### 7. Launch Jupyter Notebook `thylakoid_mesh.ipynb`
+```bash
+jupyter-lab thylakoid_mesh.ipynb
 ```
+or in VS CODE
+```bash
+code thylakoid_mesh.ipynb
+```
+
+
+
+
+# Project Description
+
+## Background
+The thylakoid system is the main structure inside a chloroplast and is where the photosynthetic proteins are located.
+
+## Objective
+`Generate a 3D mesh that can be used to place proteins and lipids on membrane surfaces.`
+
+## Challenges
+
+1. **Incomplete reference data:** Only a partial cryo-EM structure is available, but a geometric description of the system exists.
+2. **Periodic model required:** A periodic model enables placement in a periodic simulation box and exploitation of structural symmetry.
+3. **Homogeneous face distribution:** Proteins must be distributed uniformly, requiring an even distribution of mesh faces.
+
+## How the Challenges Are Addressed
+
+1. Based on cryo-EM data and associated reported statistics, ad-hoc geometries are generated using experimentally derived parameters.
+2. Symmetry operations are used to assemble the system; a representative section is then used as the periodic unit.
+3. All geometries can be generated with a user-defined `target_resolution`, producing meshes with uniformly sized faces.
+
+---
+
+**`Goal of this notebook:`** 
+Showcase the thylakoid membrane system and demonstrate the effect of `target_resolution` on mesh quality
 
 ## Project Structure
 
@@ -40,12 +83,7 @@ pip install -r requirements.txt
 - `tests/` - Unit tests for the project
 - `requirements.txt` - Python dependencies
 
-## Usage
-
-1. Follow the setup instructions above
-2. Launch Jupyter Lab or Jupyter Notebook
-3. Open `thylakoid_mesh.ipynb` to begin working with the project
 
 
-c
+
 
