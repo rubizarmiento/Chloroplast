@@ -132,8 +132,6 @@ def find_cicles_intersection(r1, r2, c1, c2):
     Returns:
     list: A list of intersection points as tuples (x, y).
     """
-    import math
-    
     x1, y1 = c1
     x2, y2 = c2
     
